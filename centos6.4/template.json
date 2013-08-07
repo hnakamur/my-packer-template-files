@@ -76,5 +76,6 @@
         "cpuid.coresPerSocket": "1"
       }
     }
-  ]
+  ],
+  "post-processors": ["vagrant"]
 }
