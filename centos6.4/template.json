@@ -10,10 +10,10 @@
       ],
       "override": {
         "virtualbox": {
-          "execute_command": "echo 'veewee'|sudo -S sh '{{.Path}}'"
+          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
         },
         "vmware": {
-          "execute_command": "echo 'veewee'|sudo -S sh '{{.Path}}'"
+          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
         }
       }
     }
@@ -31,11 +31,11 @@
       "iso_checksum": "4a5fa01c81cc300f4729136e28ebe600",
       "iso_checksum_type": "md5",
       "iso_url": "http://ftp.iij.ad.jp/pub/linux/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-minimal.iso",
-      "ssh_username": "veewee",
-      "ssh_password": "veewee",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'veewee'|sudo -S sh 'shutdown.sh'",
+      "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
       "vboxmanage": [
@@ -65,11 +65,11 @@
       "iso_checksum": "4a5fa01c81cc300f4729136e28ebe600",
       "iso_checksum_type": "md5",
       "iso_url": "http://ftp.iij.ad.jp/pub/linux/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-minimal.iso",
-      "ssh_username": "veewee",
-      "ssh_password": "veewee",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'veewee'|sudo -S sh 'shutdown.sh'",
+      "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
       "vmx_data": {
         "memsize": "512",
         "numvcpus": "1",
