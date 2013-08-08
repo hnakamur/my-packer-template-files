@@ -6,6 +6,8 @@
         "scripts/base.sh",
         "scripts/vagrant.sh",
         "scripts/virtualbox.sh",
+        "scripts/epel.sh",
+        "scripts/ansible.sh",
         "scripts/cleanup.sh"
       ],
       "override": {
