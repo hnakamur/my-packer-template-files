@@ -1,0 +1,73 @@
+{
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "iso_url": "http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/ISO-IMAGES/7.1/7.1-RELEASE-amd64-disc1.iso",
+      "iso_checksum": "ac88bfa3359aea242450d74c20347bde",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "1000s",
+      "guest_os_type": "FreeBSD_64",
+      "headless": "false",
+      "shutdown_command": "echo 'shutdown -p now' | sudo su -",
+      "boot_wait": "10s",
+      "http_directory": "http",
+      "disk_size": 20480,
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "1024"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "2"
+        ]
+      ],
+      "boot_command": [
+        "<wait>1<enter>",
+        "<wait10><enter>",
+        "<wait>s<enter>",
+        "<wait><enter>AQ",
+        "<wait><enter><enter>AQ",
+        "<wait>4<space><enter>",
+        "<wait>y",
+        "<wait><enter>",
+        "<wait>y",
+        "<wait><enter>",
+        "<wait>n",
+        "<wait>y",
+        "<wait10><tab><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>local<tab><tab><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>8.8.8.8<tab><tab><tab><tab><tab><tab><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>freebsd71<tab><tab><tab><tab><tab><tab><tab><enter>",
+        "<wait>n",
+        "<wait>n",
+        "<wait>y",
+        "<wait>n",
+        "<wait>n",
+        "<wait>n",
+        "<wait>n",
+        "<wait>n",
+        "<wait>n",
+        "<wait>n",
+        "<wait>y",
+        "<wait>u<enter>vagrant<tab><tab>20<tab>vagrant<tab><tab>staff<tab><tab><tab><enter>",
+        "<wait>x<enter>",
+        "<wait><enter>",
+        "<wait>password<enter>",
+        "<wait>password<enter>",
+        "<wait>n",
+        "<wait>x",
+        "<wait>n"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "output": "./builds/freebsd-7.1-amd64.box",
+      "type": "vagrant"
+    }
+  ]
+}
